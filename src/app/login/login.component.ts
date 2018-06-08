@@ -41,6 +41,7 @@ export class LoginComponent {
 
   private correctLogin(data: Session){
     this.storageService.setCurrentSession(data);
-    this.router.navigate(['/home']);
+    //this.router.navigate(['/home']);
+    console.log("id:"+this.storageService.getCurrentToken());
   }
 }

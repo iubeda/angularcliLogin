@@ -32,19 +32,19 @@ export class StorageService {
     this.localStorageService.removeItem('currentUser');
     this.currentSession = null;
   }
-
+  /*
   getCurrentUser(): User {
     var session: Session = this.getCurrentSession();
     return (session && session.user) ? session.user : null;
   };
-
+  */
   isAuthenticated(): boolean {
     return (this.getCurrentToken() != null) ? true : false;
   };
 
-  getCurrentToken(): string {
+  getCurrentToken(): number {
     var session = this.getCurrentSession();
-    return (session && session.token) ? session.token : null;
+    return (session && session.id) ? session.id : null;
   };
 
   logout(): void{

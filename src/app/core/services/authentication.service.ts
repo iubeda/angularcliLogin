@@ -10,14 +10,14 @@ export class AuthenticationService {
 
   constructor(private http: Http) {}
 
-  private basePath = '/api/authenticate/';
+  private basePath = 'http://dev.contanimacion.com/birds/public/login/';
 
   login(loginObj: LoginObject): Observable<Session> {
-    return this.http.post(this.basePath + 'login', loginObj).pipe(map(this.extractData));
+    return this.http.post(this.basePath, loginObj).pipe(map(this.extractData));
   }
 
   logout(): Observable<Boolean> {
-    return this.http.post(this.basePath + 'logout', {}).pipe(map(this.extractData));
+    return this.http.post(this.basePath, {}).pipe(map(this.extractData));
   }
 
   private extractData(res: Response) {
